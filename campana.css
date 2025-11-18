@@ -1,47 +1,228 @@
-.page-nav{
-  border: 1px;
-  width: 100%;
-  height: 110px;
-  background-color: rgba(243, 214, 177, 0.862) ;
-background-size: 110px;
-background-repeat:no-repeat;
-text-align: center;
-position:relative;
-font-family: Georgia, 'Times New Roman', Times, serif;
-font-size: medium;
-background-image: url(logo2.jpeg);
+/* Asegurarse de que el header no recorte el contenido */
 
+.page-nav{
+  border: 0;
+  width: 100%;
+  height: auto;
+  padding: 20px 12px; /* espacio interno para el header */
+  background-color: rgba(243, 214, 177, 0.95);
+  background-size: 110px;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+  background-image: url(logo2.jpeg);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* ligera sombra para separar */
+  border-bottom: 4px solid rgba(0,0,0,0.06); /* delinea el final del header */
+  z-index: 10;
 }
 
-.video-grid {
+/* Opcional: centrar y limitar el ancho del contenido dentro del header */
+.page-header-inner{
+  max-width: 1000px;
+  margin:  auto;
+  padding: 0 12px;
+}
 
+
+/* Contenedor del GIF como banner centrado.
+   - Ocupa hasta el 80% del viewport, con un máximo fijo (por ejemplo 1100px)
+   - Se mantiene centrado y la imagen escala proporcionalmente.
+*/
+.gif-wrapper {
+  width: min(80vw, 1100px);  /* adapta el ancho: 80% de la pantalla o max 1100px */
+  margin: 24px auto;         /* centra horizontalmente y separación vertical */
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  background: #000;          /* fondo mientras carga */
+}
+
+/* La imagen ocupa todo el ancho del contenedor y mantiene su proporción */
+.gif-img {
+  width: 100%;
+  height: 150%;              /* importante: preservar la relación de aspecto */
+  display: block;
+  object-fit: cover;         /* opcional: cover para recortar si hace falta */
+}
+
+/* Alternativa si quieres siempre ver la imagen completa sin recortes:
+.gif-img { object-fit: contain; background: #000; } */
+
+/* Ajustes responsive: en móviles el banner ocupa casi todo el ancho */
+@media (max-width: 700px) {
+  .gif-wrapper {
+    width: 95vw;             /* casi todo el ancho en móviles */
+    margin: 16px auto;
+    border-radius: 4px;
+  }
+}
+
+/* Mantengo el resto de estilos existentes sin cambios */
+
+/* Pestañas/enlaces: centradas y organizadas 5 x 5 */
+.tabs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adjusted min-width to 260px */
+  grid-template-columns: repeat(5, minmax(120px, 1fr)); /* 5 columnas */
+  gap: 12px;
+  justify-content: center;    /* centra el grid dentro del contenedor */
+  align-items: center;
+  max-width: 1100px;
+  margin: 12px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.tab-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f8e4a4;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border: 3px solid #ccc;
+  transition: transform 0.18s ease, 
+  text-align center;
+  min-height: 52px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Hover / active */
+.tab-link:hover,
+.tab-link.active {
+  background: #fff;
+  color: #000;
+  border-color: #f8e4a4;
+  transform: translateY(-3px);
+}
+
+/* Responsive: en pantallas más estrechas vamos a 5x2 -> quedará 2 columnas o 3 según ancho */
+@media (max-width: 1000px) {
+  .tabs {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .tabs {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .gif-wrapper {
+    width: 90vw;             /* ocupar más en móviles para ser visible */
+    min-width: unset;
+  }
+}
+
+/* Contenedores y estilos existentes (no interferir) */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+}
+
+.links{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   margin-bottom: 20px;
 }
 .video-section {
-flex: 1;
-margin: 0 10px;
-text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
 }
 .video-section h2, .video-section p {
-margin: 0;
-padding: 5px 0;
+  margin: 0;
+  padding: 5px 0;
 }
 .video-section video {
-display: block;
-margin: 10px auto;
-width: 320px; /* Adjust the width as needed */
-height: 240px; /* Adjust the height as needed */
+  display: block;
+  margin: 10px auto;
+  width: 320px;
+  height: 240px;
 }
-
-
 
 body{
   background-color: burlywood;
   background-repeat: repeat;
   background-size: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 10px;
+}
+
+.home-icon {
+  display: inline-block;
+  padding: 8px;
+  background: #333;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.home-icon:hover {
+  background: #555;
+  color: #ffd700;
+}
+.home-icon svg {
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+/* Wrapper centrado y tamaño máximo (similar a la captura) */
+.banner-wrapper {
+  width: min(80vw, 1100px);   /* 80% del viewport o máximo 1100px */
+  margin: 24px auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  background: #000; /* color mientras carga */
+}
+
+/* El video ocupa todo el ancho del wrapper y mantiene proporción */
+video.banner {
+  display: block;
+  width: 100%;
+  height: auto;              /* conserva la relación de aspecto del archivo */
+  object-fit: cover;         /* 'cover' llena y recorta; usar 'contain' si NO quieres recortes */
+  object-position: center;
+  max-height: 80vh;          /* evita que el banner sea más alto que la pantalla */
+}
+
+/* Fallback image dentro del video (se mostrará si no hay soporte de video) */
+video.banner .gif-img,
+.banner-wrapper > img.gif-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;         /* o 'contain' */
+}
+
+
+/* Responsive: en móviles ocupar más ancho */
+@media (max-width: 700px) {
+  .banner-wrapper {
+    width: 95vw;
+    margin: 16px auto;
+    border-radius: 4px;
+  }
+  /* Si usas height fijo, reduce la altura en móviles */
+  /* .banner-wrapper { height: 320px; } */
 }
