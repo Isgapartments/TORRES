@@ -1,25 +1,34 @@
-// Diccionario de traducciones
+// Diccionario de traducciones para index.html, torre5.html y torre6.html
 const translations = {
-  es: {
-    header: "ISG AVENIDA CONSITUCION 34",
-    welcome-msg: "BIENVENIDOS A VUESTRO APARTMENTO, AQUI ENCONTRAR LOS VIDEOS EXPLICATIVOS DEL USO DE ELECTRODOMESTICOS",
-    welcome-msg-en: "WELCOME TO YOUR APARTMENT, HERE YOU CAN FIND VIDEOS EXPLICATORY OF HOW TO USE APPLIANCES.",
-    apartment5: "APARTAMENTO 5",
-    apartment6: "APARTAMENTO 6"
-  },
   en: {
-    header: "ISG AVENIDA CONSITUCION 34",
+    header: "ISG AVENUE CONSTITUTION 34",
     welcome-msg: "WELCOME TO YOUR APARTMENT, HERE YOU CAN FIND VIDEOS EXPLANATORY OF HOW TO USE APPLIANCES.",
-    welcome-msg-en: "",
     apartment5: "APARTMENT 5",
-    apartment6: "APARTMENT 6"
+    apartment6: "APARTMENT 6",
+    exclusive: "ISG EXCLUSIVE",
+    "coffee-title": "Coffee maker",
+    "coffee-es": "In this video we show you how to use our coffee maker.",
+    "washer-title": "Washer and Dryer",
+    "washer-es": "In this video we show you how to use the washer and dryer.",
+    "dishwasher-title": "Dishwasher",
+    "dishwasher-es": "In this video we show you how to use the dishwasher.",
+    "hob-title": "Electric Hob",
+    "hob-es": "In this video we show you how to use our electric hob."
   },
   fr: {
     header: "ISG AVENUE CONSTITUTION 34",
     welcome-msg: "BIENVENUE DANS VOTRE APPARTEMENT, VOUS TROUVEREZ ICI DES VIDÉOS EXPLICATIVES SUR L'UTILISATION DES APPAREILS",
-    welcome-msg-en: "",
     apartment5: "APPARTEMENT 5",
-    apartment6: "APPARTEMENT 6"
+    apartment6: "APPARTEMENT 6",
+    exclusive: "ISG EXCLUSIVE",
+    "coffee-title": "Cafetière",
+    "coffee-es": "Dans cette vidéo, nous vous montrons comment utiliser la cafetière.",
+    "washer-title": "Lave-linge et sèche-linge",
+    "washer-es": "Dans cette vidéo, nous vous montrons comment utiliser le lave-linge et le sèche-linge.",
+    "dishwasher-title": "Lave-vaisselle",
+    "dishwasher-es": "Dans cette vidéo, nous vous montrons comment utiliser le lave-vaisselle.",
+    "hob-title": "Plaque électrique",
+    "hob-es": "Dans cette vidéo, nous vous montrons comment utiliser notre plaque électrique."
   }
 };
 
@@ -32,7 +41,7 @@ function setLanguage(lang) {
       el.textContent = translations[lang][key];
       el.style.display = "";
     } else {
-      // Si no existe traducción o está vacío, ocultar el elemento (útil para duplicidades)
+      // Si no existe traducción o está vacío, ocultar el elemento (duplicidad)
       el.style.display = "none";
     }
   });
