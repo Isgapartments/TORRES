@@ -1,11 +1,11 @@
 // Diccionario de traducciones para index.html, torre5.html y torre6.html
 const translations = {
   es: {
-    header: "ISG AVENIDA CONSITUCION 34",
-    welcome-msg: "BIENVENIDOS A VUESTRO APARTMENTO, AQUI ENCONTRAR LOS VIDEOS EXPLICATIVOS DEL USO DE ELECTRODOMESTICOS",
-    apartment5: "APARTAMENTO 5",
-    apartment6: "APARTAMENTO 6",
-    exclusive: "ISG EXCLUSIVE",
+    "header": "ISG AVENIDA CONSITUCION 34",
+    "welcome-msg": "BIENVENIDOS A VUESTRO APARTMENTO, AQUI ENCONTRAR LOS VIDEOS EXPLICATIVOS DEL USO DE ELECTRODOMESTICOS",
+    "apartment5": "APARTAMENTO 5",
+    "apartment6": "APARTAMENTO 6",
+    "exclusive": "ISG EXCLUSIVE",
     "coffee-title": "Cafetera / Coffee maker",
     "coffee-es": "En este video os mostramos como usar nuestra cafetera.",
     "washer-title": "Lavadora y Secadora / Washer and Dryer",
@@ -16,11 +16,11 @@ const translations = {
     "hob-es": "En este video os mostramos como usar nuestra vitroceramica."
   },
   en: {
-    header: "ISG AVENUE CONSTITUTION 34",
-    welcome-msg: "WELCOME TO YOUR APARTMENT, HERE YOU CAN FIND VIDEOS EXPLANATORY OF HOW TO USE APPLIANCES.",
-    apartment5: "APARTMENT 5",
-    apartment6: "APARTMENT 6",
-    exclusive: "ISG EXCLUSIVE",
+    "header": "ISG AVENUE CONSTITUTION 34",
+    "welcome-msg": "WELCOME TO YOUR APARTMENT, HERE YOU CAN FIND VIDEOS EXPLANATORY OF HOW TO USE APPLIANCES.",
+    "apartment5": "APARTMENT 5",
+    "apartment6": "APARTMENT 6",
+    "exclusive": "ISG EXCLUSIVE",
     "coffee-title": "Coffee maker",
     "coffee-es": "In this video we show you how to use our coffee maker.",
     "washer-title": "Washer and Dryer",
@@ -31,11 +31,11 @@ const translations = {
     "hob-es": "In this video we show you how to use our electric hob."
   },
   fr: {
-    header: "ISG AVENUE CONSTITUTION 34",
-    welcome-msg: "BIENVENUE DANS VOTRE APPARTEMENT, VOUS TROUVEREZ ICI DES VIDÉOS EXPLICATIVES SUR L'UTILISATION DES APPAREILS",
-    apartment5: "APPARTEMENT 5",
-    apartment6: "APPARTEMENT 6",
-    exclusive: "ISG EXCLUSIVE",
+    "header": "ISG AVENUE CONSTITUTION 34",
+    "welcome-msg": "BIENVENUE DANS VOTRE APPARTEMENT, VOUS TROUVEREZ ICI DES VIDÉOS EXPLICATIVES SUR L'UTILISATION DES APPAREILS",
+    "apartment5": "APPARTEMENT 5",
+    "apartment6": "APPARTEMENT 6",
+    "exclusive": "ISG EXCLUSIVE",
     "coffee-title": "Cafetière",
     "coffee-es": "Dans cette vidéo, nous vous montrons comment utiliser la cafetière.",
     "washer-title": "Lave-linge et sèche-linge",
@@ -56,7 +56,6 @@ function setLanguage(lang) {
       el.textContent = translations[lang][key];
       el.style.display = "";
     } else {
-      // Si no existe traducción o está vacío, ocultar el elemento (duplicidad)
       el.style.display = "none";
     }
   });
