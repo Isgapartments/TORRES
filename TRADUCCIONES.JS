@@ -1,5 +1,20 @@
 // Diccionario de traducciones para index.html, torre5.html y torre6.html
 const translations = {
+  es: {
+    header: "ISG AVENIDA CONSITUCION 34",
+    welcome-msg: "BIENVENIDOS A VUESTRO APARTMENTO, AQUI ENCONTRAR LOS VIDEOS EXPLICATIVOS DEL USO DE ELECTRODOMESTICOS",
+    apartment5: "APARTAMENTO 5",
+    apartment6: "APARTAMENTO 6",
+    exclusive: "ISG EXCLUSIVE",
+    "coffee-title": "Cafetera / Coffee maker",
+    "coffee-es": "En este video os mostramos como usar nuestra cafetera.",
+    "washer-title": "Lavadora y Secadora / Washer and Dryer",
+    "washer-es": "En este video os mostramos como usar la lavadora y secadora.",
+    "dishwasher-title": "Lavavajillas / Dishwasher",
+    "dishwasher-es": "En este video os mostramos como usar la lavavajilla.",
+    "hob-title": "Vitroceramica / Electric Hob",
+    "hob-es": "En este video os mostramos como usar nuestra vitroceramica."
+  },
   en: {
     header: "ISG AVENUE CONSTITUTION 34",
     welcome-msg: "WELCOME TO YOUR APARTMENT, HERE YOU CAN FIND VIDEOS EXPLANATORY OF HOW TO USE APPLIANCES.",
