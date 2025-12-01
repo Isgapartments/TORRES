@@ -50,9 +50,6 @@ const translations = {
 // Cambia el idioma de la página según el parámetro 'lang'
 function setLanguage(lang) {
   document.documentElement.lang = lang;
-  // DEBUG: Muestra en consola el idioma seleccionado
-  console.log("Idioma seleccionado:", lang);
-
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
     if (translations[lang] && translations[lang][key] !== undefined && translations[lang][key] !== "") {
@@ -65,7 +62,13 @@ function setLanguage(lang) {
   });
 }
 
-// Inicializar la página en español al cargar
 window.addEventListener('DOMContentLoaded', function() {
   setLanguage('es');
+
+  // Conecta los botones por JS en vez de onclick
+  document.querySelectorAll('.btn-idioma[data-lang]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setLanguage(btn.getAttribute('data-lang'));
+    });
+  });
 });
