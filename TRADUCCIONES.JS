@@ -50,18 +50,22 @@ const translations = {
 // Cambia el idioma de la página según el parámetro 'lang'
 function setLanguage(lang) {
   document.documentElement.lang = lang;
+  // DEBUG: Muestra en consola el idioma seleccionado
+  console.log("Idioma seleccionado:", lang);
+
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
-    if (translations[lang][key] !== undefined && translations[lang][key] !== "") {
+    if (translations[lang] && translations[lang][key] !== undefined && translations[lang][key] !== "") {
       el.textContent = translations[lang][key];
       el.style.display = "";
     } else {
       el.style.display = "none";
+      console.warn("No hay traducción para clave:", key, "en idioma:", lang);
     }
   });
 }
 
-// Inicializar la página en español
-window.onload = function() {
+// Inicializar la página en español al cargar
+window.addEventListener('DOMContentLoaded', function() {
   setLanguage('es');
-};
+});
